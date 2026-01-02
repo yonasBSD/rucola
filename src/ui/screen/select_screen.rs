@@ -422,14 +422,14 @@ impl super::Screen for SelectScreen {
                         {
                             // if successfull, replace the filter with it
                             let _ = super::extract_string_and_clear(&mut self.filter_area);
-                            self.filter_area.insert_str(tag);
+                            self.filter_area.insert_str(tag.replace(" ", "-"));
                         }
                         // filter and go to select mode
                         self.filter(self.filter_from_input());
                         self.mode = SelectMode::Select;
                     }
                     // G: Change exact/prefix match
-                    KeyCode::Char('t' | 'T') => {
+                    KeyCode::Char('m' | 'M') => {
                         self.tag_match = self.tag_match.cycle();
                         self.filter(self.filter_from_input());
                         self.style_text_area();
@@ -1152,11 +1152,13 @@ impl super::Screen for SelectScreen {
                             )
                             .title_bottom(
                                 Line::from(vec![
-                                    Span::styled("T", self.styles.hotkey_style),
-                                    Span::styled("ags ", self.styles.text_style),
+                                    Span::styled("󰌑", self.styles.hotkey_style),
+                                    Span::styled(": Apply tag filter──", self.styles.text_style),
+                                    Span::styled("M", self.styles.hotkey_style),
+                                    Span::styled("atch tags ", self.styles.text_style),
                                     Span::styled(
                                         match self.tag_match {
-                                            data::TagMatch::Exact => "exact",
+                                            data::TagMatch::Exact => "exactly",
                                             data::TagMatch::Prefix => "by prefix",
                                         },
                                         self.styles.text_style,
