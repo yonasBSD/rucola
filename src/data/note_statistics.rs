@@ -423,6 +423,7 @@ impl EnvironmentStats {
 mod tests {
     use super::*;
     use crate::{data, io};
+    use pretty_assertions::assert_eq;
 
     #[test]
     fn test_env_stats_1_tags_any() {

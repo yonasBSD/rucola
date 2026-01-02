@@ -53,6 +53,7 @@ expanduser = "^1.2"
 
 [dev-dependencies]
 testdir = "^0.9"
+pretty_assertions= "^1.4"
 
 [build-dependencies]
 confy = "^1.0"

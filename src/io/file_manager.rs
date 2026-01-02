@@ -349,6 +349,7 @@ impl FileManager {
 }
 #[cfg(test)]
 mod tests {
+    use pretty_assertions::assert_eq;
 
     #[test]
     fn test_edit() {

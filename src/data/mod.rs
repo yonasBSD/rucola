@@ -50,6 +50,7 @@ pub fn path_to_name(path: &std::path::Path) -> Result<String, error::RucolaError
 #[cfg(test)]
 mod tests {
     use super::*;
+    use pretty_assertions::assert_eq;
     #[test]
     fn test_id_conversion() {
         assert_eq!(name_to_id("Lie Theory#Definition"), "lie-theory");

@@ -1,4 +1,4 @@
-# Version 0.8.2 - Tag List
+# Version 0.8.2 - Basic Tag List
 - Added a pop-up list of all tags in the current vault to the select screen.
 - Moved the option to switch between exact and prefix tag matching to the tag list.
 - Added functionality to scroll the tag list and select a tag to be put into the filter.
